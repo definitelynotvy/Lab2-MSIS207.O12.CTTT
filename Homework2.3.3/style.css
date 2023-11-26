@@ -1,0 +1,31 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #ed9aed, #edd6d6, #fdbb2d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title {
+    font-family: 'Lobster', cursive;
+    color: #3fabc3;
+    text-align: center;
+}
+
+.countdown-container {
+    text-align: center;
+}
+
+.countdown {
+    font-size: 3em;
+    color: #3fabc3;
+    margin-top: 20px;
+}

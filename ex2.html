@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Parse a HTTP Cookie header string and display cookie name-value pairs</title>
+</head>
+<body>
+  <div id="result"></div>
+
+  <script>
+    const parseCookie = str =>
+      str
+        .split(';')
+        .map(v => v.split('='))
+        .reduce((acc, v) => {
+          acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
+          return acc;
+        }, {});
+
+    // Parse the cookie and display the result on the webpage
+    const parsedCookies = parseCookie('foo=bar; equation=E%3Dmc%5E2');
+    const resultDiv = document.getElementById('result');
+    resultDiv.textContent = JSON.stringify(parsedCookies, null, 2);
+  </script>
+</body>
+</html>
